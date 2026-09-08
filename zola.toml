@@ -29,10 +29,11 @@ include_content = true
 
 home_eyebrow = "Web API Firewalls - and other assorted HTTP Proxies"
 
-#[extra.devlab.brand]
-#logo_text = "Acme"
+[extra.devlab.brand]
+logo_text = "TanoWAF"
+show_logo_mark = true
+logo_mark_path = "/brand/logo.png"
 #footer_text = "Acme"
-#show_logo_mark = false
 
 [extra.devlab.footer]
 show = true
