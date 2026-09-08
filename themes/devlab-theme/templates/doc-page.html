@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% set show_last_updated = false %}
+{% set show_copy_link = false %}
+{% set edit_url = "" %}
+{% set report_url = "" %}
+{% set date_format = "%Y-%m-%d" %}
+{% if config.extra.devlab.docs.page_actions is defined %}
+{% set page_actions = config.extra.devlab.docs.page_actions %}
+{% set show_last_updated = page_actions.show_last_updated | default(value=false) %}
+{% set show_copy_link = page_actions.show_copy_link | default(value=false) %}
+{% set edit_url = page_actions.edit_url | default(value="") %}
+{% set report_url = page_actions.report_url | default(value="") %}
+{% set date_format = page_actions.date_format | default(value="%Y-%m-%d") %}
+{% if not date_format %}{% set date_format = "%Y-%m-%d" %}{% endif %}
+{% endif %}
+
+{% set page_actions_label = "Page actions" %}
+{% set last_updated_label = "Last updated" %}
+{% set copy_link_label = "Copy link" %}
+{% set edit_page_label = "Edit this page" %}
+{% set feedback_prompt_label = "Questions or feedback?" %}
+{% set report_issue_label = "Report an issue" %}
+{% if config.extra.labels is defined %}
+{% if config.extra.labels.page_actions is defined %}{% set page_actions_label = config.extra.labels.page_actions %}{% endif %}
+{% if config.extra.labels.last_updated is defined %}{% set last_updated_label = config.extra.labels.last_updated %}{% endif %}
+{% if config.extra.labels.copy_link is defined %}{% set copy_link_label = config.extra.labels.copy_link %}{% endif %}
+{% if config.extra.labels.edit_page is defined %}{% set edit_page_label = config.extra.labels.edit_page %}{% endif %}
+{% if config.extra.labels.feedback_prompt is defined %}{% set feedback_prompt_label = config.extra.labels.feedback_prompt %}{% endif %}
+{% if config.extra.labels.report_issue is defined %}{% set report_issue_label = config.extra.labels.report_issue %}{% endif %}
+{% endif %}
+{% set has_last_updated = show_last_updated and page.updated %}
+
+<div class="docs-shell">
+  {% include "partials/docs-sidebar.html" %}
+
+  <article class="docs-content content">
+    {% include "partials/docs-breadcrumbs.html" %}
+
+    <header class="page-header">
+      <div class="docs-page-heading">
+        <h1>{{ page.title }}</h1>
+        {% include "partials/docs-page-copy-link.html" %}
+      </div>
+
+      {% if page.description %}
+      <p class="page-description">
+        {{ page.description }}
+      </p>
+      {% endif %}
+    </header>
+
+    {{ page.content | safe }}
+
+    {% include "partials/docs-page-actions.html" %}
+
+    {% include "partials/docs-prev-next.html" %}
+  </article>
+
+  {% set toc_items = page.toc %}
+  {% include "partials/docs-toc.html" %}
+</div>
+{% endblock content %}

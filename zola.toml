@@ -1,0 +1,67 @@
+# The URL the site will be built for
+base_url = "https://tanowaf.github.io"
+
+title = "Tano WAF"
+
+theme = "devlab-theme"
+
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = true
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = true
+
+[markdown]
+
+[markdown.highlighting]
+#theme = "catppuccin-mocha"
+light_theme = "github-light"
+dark_theme = "github-dark"
+
+[search]
+index_format = "elasticlunr_javascript"
+include_title = true
+include_description = true
+include_content = true
+
+[extra]
+# Put all your custom variables here
+
+#[extra.devlab.brand]
+#logo_text = "Acme"
+#footer_text = "Acme"
+#show_logo_mark = false
+
+[extra.devlab.footer]
+show = true
+#note = "Documentation maintained by the Acme team."
+links_label = "Project links"
+links = [
+    { name = "Source", path = "https://github.com/tanowaf/waf-core", icon = "github" },
+    #{ name = "Atom feed", path = "/atom.xml", icon = "rss" },
+]
+
+[extra.devlab.navigation]
+links = [
+    { name = "Home", path = "/" },
+    #{ name = "Docs", kind = "docs" },
+    { name = "Blog", kind = "blog" },
+]
+
+#[extra.devlab.docs]
+#section = "docs/_index.md"
+#path = "/docs/"
+#get_started_path = "/docs/getting-started/"
+
+[extra.devlab.blog]
+path = "/blog/"
+date_format = "%Y-%m-%d"
+
+[extra.devlab.appearance]
+default_mode = "system"
+show_toggle = true
+
+[extra.devlab.search]
+enabled = true
+# The empty index value selects search_index.<language>.js automatically.
+index = ""
