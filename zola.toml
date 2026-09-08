@@ -27,6 +27,8 @@ include_content = true
 [extra]
 # Put all your custom variables here
 
+home_eyebrow = "Web API Firewalls - and other assorted HTTP Proxies"
+
 #[extra.devlab.brand]
 #logo_text = "Acme"
 #footer_text = "Acme"

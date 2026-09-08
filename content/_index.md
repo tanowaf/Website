@@ -1,5 +1,5 @@
 +++
-title = "Tano Web Application Firewall"
+title = "Tano WAF"
 description = "Lorem Ipsum"
 [extra]
 #home_layout = "wide"
