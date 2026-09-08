@@ -1,5 +1,5 @@
 # The URL the site will be built for
-base_url = "https://tanowaf.github.io"
+base_url = "https://tanowaf.github.io/Website"
 
 title = "Tano WAF"
 
