@@ -1,7 +1,15 @@
-# The URL the site will be built for
-base_url = "https://tanowaf.org"
+# The website configuration file.
+#
+# It overrides settings from the theme (themes/devlab-theme/theme.toml).
+#
+# An example of all the settings which can be used to configure the site, including theme-specific ones, can be found
+# in themes/devlab-theme/zola.toml
 
+base_url = "https://tanowaf.org"
 title = "Tano WAF"
+
+#description =
+#author =
 
 theme = "devlab-theme"
 
@@ -11,12 +19,18 @@ compile_sass = true
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
 
+#minify_html = true
+#generate_feeds = true
+
 [markdown]
+#render_emoji = true
+#insert_anchor_links = "right"
 
 [markdown.highlighting]
 #theme = "catppuccin-mocha"
 light_theme = "github-light"
 dark_theme = "github-dark"
+#error_on_missing_language = true
 
 [search]
 index_format = "elasticlunr_javascript"
@@ -25,15 +39,14 @@ include_description = true
 include_content = true
 
 [extra]
-# Put all your custom variables here
-
-home_eyebrow = "Web API Firewalls - and other assorted HTTP Proxies"
+#home_eyebrow = "Web API Firewalls - and other assorted HTTP Proxies"
+home_eyebrow = ""
 
 [extra.devlab.brand]
 logo_text = "TanoWAF"
 show_logo_mark = true
 logo_mark_path = "/brand/logo.png"
-#footer_text = "Acme"
+footer_text = "Gaetano Giunta"
 
 [extra.devlab.footer]
 show = true
