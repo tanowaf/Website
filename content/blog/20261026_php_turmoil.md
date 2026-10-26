@@ -26,7 +26,7 @@ But not all WAFs are designed equal.
 Cloudflare, f.e. is surely to commend for being able to defend a large part of the internet at speed and scale. And
 yet, it seems that their WAF had to be "reinvented" in order to be able to handle PHP2Shell.
 
-![Tweets from Cloudflare on Oct 21st, 2026](/img/blog/clouflare_tweets_20261021_.png)
+![Tweets from Cloudflare on Oct 21st, 2026](/img/blog/clouflare_tweets_20261021.png)
 
 The good thing is that this specific design element was in TanoWAF since the start: firewall rules apply filtering
 both to the incoming request and to the response from upstream, and the response filter does have full access to
@@ -43,5 +43,5 @@ Which begs the question: is Swoole immune from PHP2Shell? And, is there a long l
 the corner, waiting for the next AI-assisted step in vulnerability discovery?
 
 PHP makes it trivial to avoid memory-management issues in the code it runs, but it is not immune from memory-management
-issues in its own codebase. Maybe Rust the only language which should be used nowadays for any kind of web-exposed development
-- and that seems to cover 100% of development...
+issues in its own codebase. Maybe Rust the only language which should be used nowadays for any kind of web-exposed
+development - and that seems to cover 100% of development...
