@@ -1,7 +1,7 @@
 +++
 title = "WAF design and using PHP"
 description = "Some clearly good design decisions, some not necessarily so"
-date = 2026-09-08
+date = 2026-10-26
 +++
 
 Around the 20th of October, the [PHP2Shell](https://en.wikipedia.org/wiki/PHP2Shell) PHP vulnerability was made known
