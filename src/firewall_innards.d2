@@ -1,0 +1,42 @@
+vars: {
+  d2-config: {
+    # This seems to be the only engine which renders this graph as intended,
+    # at least in d2 version 0.9.0
+    layout-engine: elk
+  }
+}
+
+direction: right
+
+client: {
+  label: Docker cli
+  shape: person
+}
+
+firewall: {
+  label: Firewall
+  #grid-columns: 1
+
+  webserver: {
+    label: Webserver
+  }
+
+  php: {
+    label: PHP
+  }
+}
+
+upstream: {
+  label: Docker daemon
+  shape: cloud
+}
+
+client -> firewall.webserver: HTTP request
+client <- firewall.webserver: HTTP response
+firewall.webserver -> firewall.php: '"stuff"...' {
+  style.font-color: red
+  style.bold: true
+}
+firewall.webserver <- firewall.php: HTTP response
+firewall.php -> upstream: HTTP request
+firewall.php <- upstream: HTTP response

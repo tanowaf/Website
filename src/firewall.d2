@@ -1,0 +1,28 @@
+vars: {
+  d2-config: {
+    # This seems to be the only engine which renders this graph as intended,
+    # at least in d2 version 0.9.0
+    layout-engine: elk
+  }
+}
+
+direction: right
+
+client: {
+  label: Docker cli
+  shape: person
+}
+
+firewall: {
+  label: Firewall
+}
+
+upstream: {
+  label: Docker daemon
+  shape: cloud
+}
+
+client -> firewall: HTTP request
+client <- firewall: HTTP response
+firewall -> upstream: HTTP request
+firewall <- upstream: HTTP response
